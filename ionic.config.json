@@ -1,0 +1,7 @@
+{
+  "name": "rpi-task-manager",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
