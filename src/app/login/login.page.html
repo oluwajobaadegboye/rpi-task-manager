@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-margin">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input type="password"></ion-input>
+            </ion-item>
+            <div class="ion-margin-top ion-margin-bottom">
+              <ion-button class="login-button" (click)="onLogin()">Login</ion-button>
+              <a href="/resetpassword" class="ion-float-right forgot-password">Forget Password?</a>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+    <div class="sign-in-center ion-margin-bottom">
+      <ion-img class="g-logo" src="../../assets/Google__G__Logo.svg.png"></ion-img>
+      <a>Login with Google</a>
+    </div>
+  </ion-card>
+
+
+  <div class="ion-margin sign-in-center">
+    Don't have an account? &nbsp; <a href="signup">Sign Up</a>
+  </div>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="ion-margin">
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label position="floating">Full Name</ion-label>
+              <ion-input name="fullName" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input name="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Phone</ion-label>
+              <ion-input name="phone"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input name="password" type="password"></ion-input>
+            </ion-item>
+            <div class="ion-margin-top ion-margin-bottom ion-float-right">
+              <ion-button class="login-button" (click)="onSignUp()">Sign Up</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+
+  <div class="ion-margin sign-in-center">
+    Already have account? &nbsp; <a href="login">Login</a>
+  </div>
+</ion-content>
+
