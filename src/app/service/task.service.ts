@@ -7,7 +7,7 @@ import {HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class TaskService {
-  baseUrl = 'https://jsonplaceholder.typicode.com/todos';
+  baseUrl = 'https://us-central1-rpi-task-manager.cloudfunctions.net/task';
 
   constructor(private http: HttpClient) { }
 

@@ -1,5 +1,5 @@
 export interface Task {
-  id: number;
+  id: string;
   userId: number;
   title: string;
   displayTitle: string;
@@ -16,7 +16,7 @@ export interface User {
   email: string;
   phone: string;
   address: Address;
-  avatar: any;
+  imageUrl: string;
 }
 
 export interface Address {
