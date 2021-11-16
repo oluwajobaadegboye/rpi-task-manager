@@ -1,6 +1,15 @@
-.search-bar{
+.search-bar {
   max-width: 77%;
   margin-top: 7px;
   margin-bottom: 1rem;
   margin-left: 0.5rem;
+}
+
+ion-searchbar {
+  --icon-color: var(--ion-color-primary);
+  --border-radius: .7rem;
+}
+
+.tasks-list .list-md{
+  margin-top: 3.5rem !important;
 }

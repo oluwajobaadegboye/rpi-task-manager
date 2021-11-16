@@ -12,4 +12,7 @@ export class TasksPage implements OnInit {
   ngOnInit() {
   }
 
+  onAddTodo() {
+    console.log();
+  }
 }

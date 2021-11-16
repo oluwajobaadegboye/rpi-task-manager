@@ -7,6 +7,8 @@ export interface Task {
   estimatedTimeToComplete: string;
   priorityNumber: number;
   status: string;
+  createdAt: Date;
+  completedAt: Date;
   otherUsers: User[];
 }
 
