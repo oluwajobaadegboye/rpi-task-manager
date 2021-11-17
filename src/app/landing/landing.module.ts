@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { LandingPageRoutingModule } from './landing-routing.module';
 
 import { LandingPage } from './landing.page';
+import {ProfileHeaderPageModule} from "../profile-header/profile-header.module";
+import {TaskDetailPageModule} from "../tasks/task-detail/task-detail.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LandingPageRoutingModule
+    LandingPageRoutingModule,
+    ProfileHeaderPageModule,
+    TaskDetailPageModule
   ],
   declarations: [LandingPage]
 })

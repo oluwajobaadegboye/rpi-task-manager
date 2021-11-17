@@ -10,6 +10,11 @@ ion-searchbar {
   --border-radius: .7rem;
 }
 
-.tasks-list .list-md{
-  margin-top: 3.5rem !important;
+.tasks-list{
+  margin-top: 4.5rem !important;
+}
+
+.task-item-title{
+  color: steelblue;
+  font-weight: bold;
 }

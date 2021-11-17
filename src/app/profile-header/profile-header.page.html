@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" *ngIf="hasBackButton">
+      <ion-back-button [defaultHref]="backUrl"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+    <ion-avatar slot="end" style="height: 10%; width:10%"
+                class="ion-text-center ion-margin"
+                (click)="presentProfilePopover($event)">
+      <img src="../../assets/Passport%20Photo.JPG"/></ion-avatar>
+  </ion-toolbar>
+</ion-header>

@@ -4,12 +4,17 @@ export interface Task {
   title: string;
   displayTitle: string;
   description: string;
-  estimatedTimeToComplete: string;
+  // estimatedTimeToComplete: string;
   priorityNumber: number;
   status: string;
   createdAt: Date;
   completedAt: Date;
-  otherUsers: User[];
+  notes: Note[];
+}
+
+export interface Note {
+  note: string;
+  addedAt: Date;
 }
 
 export interface User {

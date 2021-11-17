@@ -28,12 +28,20 @@ const routes: Routes = [
     loadChildren: () => import('./tasks/tasks.module').then(m => m.TasksPageModule)
   },
   {
+    path: 'tasks/:id',
+    loadChildren: () => import('./tasks/task-detail/task-detail.module').then(m => m.TaskDetailPageModule)
+  },
+  {
     path: 'splash-screen',
     loadChildren: () => import('./splash-screen/splash-screen.module').then(m => m.SplashScreenPageModule)
   },
   {
     path: 'resetpassword',
-    loadChildren: () => import('./resetpassword/resetpassword.module').then( m => m.ResetpasswordPageModule)
+    loadChildren: () => import('./resetpassword/resetpassword.module').then(m => m.ResetpasswordPageModule)
+  },
+  {
+    path: 'profile-header',
+    loadChildren: () => import('./profile-header/profile-header.module').then(m => m.ProfileHeaderPageModule)
   },
 ];
 
