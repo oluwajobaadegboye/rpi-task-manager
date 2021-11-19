@@ -2,3 +2,47 @@
                     [hasBackButton]="true"
                     [title]="'Task Information'">
 </app-profile-header>
+
+<ion-item>
+  <ion-label>Status</ion-label>
+  <ion-select interface="popover" [value]="onTaskStatus()">
+    <ion-select-option value="PENDING">Pending</ion-select-option>
+    <ion-select-option value="IN_PROGRESS">In Progress</ion-select-option>
+    <ion-select-option value="COMPLETED">Completed</ion-select-option>
+  </ion-select>
+</ion-item>
+
+<ion-content *ngIf="task">
+  <ion-card>
+    <ion-card-header class="ion-text-center">
+      <ion-card-title>{{task.title}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="4">
+            <span style="font-weight: bold">Description:</span>
+          </ion-col>
+          <ion-col>
+            {{task.description}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="4">
+            <span style="font-weight: bold">Created Date:</span>
+          </ion-col>
+          <ion-col>
+            {{getDate(task.createdAt)}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div>
+    <span class="note-header">Notes</span>
+    <ion-button class="add-note-button">Add</ion-button>
+  </div>
+
+</ion-content>

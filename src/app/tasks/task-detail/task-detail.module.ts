@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { TaskDetailPageRoutingModule } from './task-detail-routing.module';
 
 import { TaskDetailPage } from './task-detail.page';
-import {ProfileHeaderPageModule} from "../../profile-header/profile-header.module";
+import {ProfileHeaderPageModule} from '../../profile-header/profile-header.module';
 
 @NgModule({
   imports: [

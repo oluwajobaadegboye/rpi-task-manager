@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router, NavigationStart} from '@angular/router';
-import { filter, map } from 'rxjs/operators';
-import {Task} from '../../model/task';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Task, TaskStatus} from '../../model/task';
 
 @Component({
   selector: 'app-task-detail',
@@ -9,18 +8,30 @@ import {Task} from '../../model/task';
   styleUrls: ['./task-detail.page.scss'],
 })
 export class TaskDetailPage implements OnInit {
-  task;
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  // @ts-ignore
+  task: Task;
 
-  ngOnInit() {
-    this.router.events.pipe(
-      filter(e => e instanceof NavigationStart),
-      map(() => {
-        const currentState = this.router.getCurrentNavigation();
-        this.task = currentState.extras.state;
-        console.log('task ', this.task);
-      })
-    );
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.route.queryParams.subscribe(params => {
+      if (this.router.getCurrentNavigation().extras.state) {
+        this.task = this.router.getCurrentNavigation().extras.state.task;
+        console.log('task received ', JSON.stringify(this.task));
+      }
+    });
   }
 
+  ngOnInit() {
+  }
+
+  onTaskStatus() {
+    if (this.task.status) {
+      const enumValueFromStatus = this.task.status.toLowerCase() === 'pending' ? 0 :
+        this.task.status.toLowerCase() === 'completed' ? 2 : 1;
+      return TaskStatus[this.task.status.toUpperCase()];
+    }
+  }
+
+  getDate(createdAt: Date) {
+    return createdAt ? new Date(createdAt).toLocaleString() : '';
+  }
 }

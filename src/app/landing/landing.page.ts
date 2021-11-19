@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {TaskService} from '../service/task.service';
 import {Task} from '../model/task';
-import {ModalController, PopoverController} from '@ionic/angular';
+import {PopoverController} from '@ionic/angular';
 import {ProfilePopoverComponent} from './profile-popover/profile-popover.component';
-import {Router} from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -47,9 +47,9 @@ export class LandingPage implements OnInit {
     this.router.navigate(['tasks']);
   }
 
-  onTaskDetails(task: any) {
-    console.log('test clicking ', task);
-    this.router.navigate(['/tasks/' + task.id], task);
+  onTaskDetails(task: Task) {
+    const navigationExtras: NavigationExtras = {state: {task}};
+    this.router.navigate(['/tasks/' + task.id], navigationExtras);
   }
 
   async presentProfilePopover(ev: any) {

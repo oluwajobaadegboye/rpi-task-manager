@@ -35,3 +35,9 @@ export interface Address {
   state: string;
   country: string;
 }
+
+export enum TaskStatus {
+  PENDING = 'PENDING',
+  IN_PROGRESS = 'IN_PROGRESS',
+  COMPLETED = 'COMPLETED'
+}
